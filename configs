@@ -1,9 +1,0 @@
-dataset_id: PNEUMONIA
-batch_size: 64
-lr: 0.0005
-n_epochs: 200
-weight_decay: 0.05
-num_classes: 3
-cross_validation: False
-save_every: 10
-log_running_loss: True
