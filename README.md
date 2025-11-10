@@ -51,7 +51,7 @@ Detecting-Pneumonia-From-Chest-X-Rays/
 
 ### 3.1 Preprocessing & Data Augmentation
 
-**Training transforms**
+**Training transforms**:
 - Convert image to PIL
 - Resize to 256×256
 - RandomResizedCrop to 224×224
@@ -61,7 +61,7 @@ Detecting-Pneumonia-From-Chest-X-Rays/
 
 These augmentations significantly improve generalization by introducing variations in scale, color, contrast, and structure.
 
-**Validation transforms**
+**Validation transforms**:
 - Convert to PIL
 - Resize to 256
 - Center Crop to 224
@@ -69,6 +69,8 @@ These augmentations significantly improve generalization by introducing variatio
 - Normalize (ImageNet mean/std)
 
 Validation is deterministic to allow fair comparison across epochs.
+
+---
 
 ### 3.2 Architectures
 
@@ -88,12 +90,16 @@ The main model used in this project was **DeiT-Base (patch16, 224×224)**, a Vis
 
 All models use a 3-class classifier (`num_classes = 3`) with softmax output.
 
+---
+
 ### 3.3 Loss & Optimization
 - **Loss:** CrossEntropy (optionally ReducedCrossEntropy)
 - **Optimizer:** AdamW
 - **Scheduler:** CosineAnnealingLR
 - **Batch size:** 64
 - **Epochs:** 200
+
+---
 
 ### 3.4 Cross-Validation
 - Stratified K-Fold CV on training set
@@ -121,7 +127,8 @@ Best performance achieved by **DeiT (Vision Transformer)**:
 - AdamW + Cosine Scheduler
 - Label Smoothing (0.1)
 
-![Training vs Validation Accuracy](accuracy_plot.png)
+
+<img src="accuracy_plot.png" width="600">
 
 ---
 
@@ -161,7 +168,6 @@ Detecting-Pneumonia-from-Chest-X-Rays/
 ├── README.md
 └── LICENSE
 ```
-
 
 ---
 
